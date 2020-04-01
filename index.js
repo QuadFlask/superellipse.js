@@ -17,17 +17,14 @@ function calcSuperEllipsePath(w, h, r1, r2) {
 exports.calcSuperEllipsePath = calcSuperEllipsePath;
 function getSuperEllipsePathAsDataUri(w, h, r1, r2) {
     var id = "se-" + w + "-" + h + "-" + r1 + "-" + r2;
-    var svg = "<svg width=\"" + w + "\" height=\"" + h + "\" viewBox=\"0 0 " + w + " " + h + "\">\n<defs><clipPath id=\"" + id + "\"><path fill=\"#000\" d=\"" + calcSuperEllipsePath(w, h, r1, r2) + "\"/></clipPath></defs>\n<g clip-path=\"url(#" + id + ")\"><rect width=\"" + w + "\" height=\"" + h + "\" fill=\"#000\"/></g></svg>";
+    var svg = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"" + w + "\" height=\"" + h + "\" viewBox=\"0 0 " + w + " " + h + "\">\n<defs><clipPath id=\"" + id + "\"><path fill=\"#000\" d=\"" + calcSuperEllipsePath(w, h, r1, r2) + "\"/></clipPath></defs>\n<g clip-path=\"url(#" + id + ")\"><rect width=\"" + w + "\" height=\"" + h + "\" fill=\"#000\"/></g></svg>";
     return { id: id, svg: svg, dataUri: svg2DataUri(svg) };
 }
 exports.getSuperEllipsePathAsDataUri = getSuperEllipsePathAsDataUri;
 function svg2DataUri(data) {
-    if (data.indexOf('http://www.w3.org/2000/svg') < 0)
-        data = data.replace(/<svg/g, "<svg xmlns='http://www.w3.org/2000/svg'");
-    data = data.replace(/"/g, '\'')
+    return "data:image/svg+xml," + data.replace(/"/g, '\'')
         .replace(/>\s+</g, "><")
         .replace(/\s{2,}/g, " ")
         .replace(/[\r\n%#()<>?[\\\]^`{|}]/g, encodeURIComponent);
-    return "data:image/svg+xml," + data;
 }
 exports.svg2DataUri = svg2DataUri;
