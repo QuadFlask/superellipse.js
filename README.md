@@ -1,2 +1,2 @@
-superellipsejs
+superellipse.js
 -----

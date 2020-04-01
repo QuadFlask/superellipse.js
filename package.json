@@ -1,25 +1,35 @@
 {
   "name": "superellipsejs",
   "version": "0.0.1",
-  "description": "",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "browser": "dist/index.umd.js",
-  "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w"
-  },
-  "author": "",
+  "description": "super-ellipse svg generator",
+  "author": "QuadFlask",
   "license": "MIT",
-  "files": [
-    "dist"
+  "main": "index.js",
+  "homepage": "https://github.com/QuadFlask/superellipse.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QuadFlask/superellipse.js"
+  },
+  "keywords": [
+    "svg",
+    "squircle",
+    "superellipse",
+    "round",
+    "roundrect",
+    "border-radius",
+    "mask-image",
+    "mask"
   ],
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json",
+    "deploy": "npm version patch; npm run build; npm publish"
+  },
   "devDependencies": {
-    "rollup": "^2.3.2",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-typescript": "^1.0.1",
-    "tslib": "^1.11.1",
     "typescript": "^3.8.3"
-  }
+  },
+  "files": [
+    "index.ts",
+    "index.js",
+    "index.d.ts"
+  ]
 }
