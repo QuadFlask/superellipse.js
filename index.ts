@@ -1,7 +1,7 @@
 export const Preset = {
     iOS: {
-        r1: 0.093,
-        r2: 0.247,
+        r1: 0.0527,
+        r2: 0.35,
     },
     KakaoTalk: {
         r1: 0.14,
