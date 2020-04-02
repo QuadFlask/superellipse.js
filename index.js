@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Preset = {
     iOS: {
-        r1: 0.0527,
-        r2: 0.35,
+        r1: 0.0586,
+        r2: 0.332,
     },
     KakaoTalk: {
         r1: 0.14,
